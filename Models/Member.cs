@@ -12,6 +12,6 @@ namespace OST_Inventory.Models
         public string MemberDesignation {  get; set; }
 
         public string MobileNumber {  get; set; }
-
+          
     }
 }
