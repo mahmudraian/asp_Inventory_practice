@@ -1,23 +1,23 @@
-﻿<div id="dveqipmentpanel" style="display:none;">
-    @using (Html.BeginForm("SaveEquipment", "Home"))
+﻿<div id="dvMemberpanel" style="display:none;">
+    @using (Html.BeginForm("SaveMember", "Home"))
     {
 
         <div class="row mb-2">
             <div class="col col-12">
-                Equipment Name
-                <input type="text" name="txtName" />
+                User Name
+                <input type="text" name="txtUserName" />
             </div>
         </div>
         <div class="row mb-2">
             <div class="col col-12">
-                Equipment Quantity
-                <input type="number" name="txtQuantity" />
+              PassWord
+                <input type="text" name="txtPassword" />
             </div>
         </div>
         <div class="row mb-2">
             <div class="col col-12">
-                Equipment stock
-                <input type="number" name="txtstock" />
+                Role
+                <input type="text" name="txtRole" />
             </div>
         </div>
         <div class="row mb-2">

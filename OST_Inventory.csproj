@@ -181,6 +181,7 @@
     <Content Include="Views\Home\DashBoard.cshtml" />
     <Content Include="Views\Auth\Login.cshtml" />
     <Content Include="Views\Home\_PartialEquipmentEnttry.cshtml" />
+    <Content Include="Views\Home\_PartialMemberEnttry.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

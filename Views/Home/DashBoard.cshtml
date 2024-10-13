@@ -11,19 +11,27 @@
             resizable: false,
             height: "auto",
             width: 400,
-            height:500,
+            height: 500,
             modal: true,
-            buttons: {
-                "Delete all items": function () {
-                    // Add your delete logic here
-                    $(this).dialog("close");
-                },
-                Cancel: function () {
-                    $(this).dialog("close");
-                }
-            }
         });
     }
+
+    function MemberEntry() {
+        $("#dvMemberpanel").dialog({
+            resizable: false,
+            height: "auto",
+            width: 400,
+            height: 500,
+            modal: true,
+
+
+        });
+
+
+
+    }
+
+
 </script>
 
 
@@ -34,13 +42,15 @@
         <div class="card text-center">
             <div class="card-header ">
                 Equipment
+                <button class="btn btn-primary" onclick='return EquipmentEntry()' style="float:right;">+</button>
             </div>
             <div class="card-body">
 
                 <table>
                     <tr>
                         <th>Name</th>
-                        <th> Count</th>
+                        <th>Quantity</th>
+                        <th>Stock</th>
                         <th> Date </th>
 
                     </tr>
@@ -51,8 +61,10 @@
                         {
                             <tr>
                                 <td style="display:none;">@obj.EquipmentId</td>
+                                    
                                 <td>@obj.Name</td>
-                                <td>@obj.Count </td>
+                                <td>@obj.Quantity </td>
+                                <td>@obj.Stock</td>
                                 <td>@obj.EntryDate</td>
                             </tr>
 
@@ -73,27 +85,26 @@
         <div class="card">
             <div class="card-header text-center">
                 Assigned Equipment
-                <button class="btn btn-primary" onclick='return EquipmentEntry()' style="float:right;">+</button>
+                <button class="btn btn-primary" onclick='return MemberEntry()' style="float:right;">+</button>
+
             </div>
             <div class="card-body">
 
                 <table>
                     <tr>
-                        <th>Member Name</th>
-                        <th> Member Designation</th>
-                        <th> Mobile Number </th>
+                        <th>Member User Name</th>
+                        <th> Member Password </th>
 
                     </tr>
 
                     @{
-                        List<Equipment> list01 = Equipment.LSTAssignEquipment();
-                        foreach (Equipment obj in list01)
+                        List<Member> list01 = Member.LSTMember();
+                        foreach (Member obj in list01)
                         {
                             <tr>
                                 <td style="display:none;"></td>
-                                <td>@obj.Member.MemberName</td>
-                                <td>@obj.Member.MemberDesignation </td>
-                                <td>@obj.Member.MobileNumber</td>
+                                <td>@obj.UserName</td>
+                                <td>@obj.PassWord </td>
                             </tr>
 
                         }
@@ -111,4 +122,4 @@
 </div>
 
 @Html.Partial("~/Views/Home/_PartialEquipmentEnttry.cshtml")
-
+@Html.Partial("~/Views/Home/_PartialMemberEnttry.cshtml")
